@@ -2,12 +2,13 @@ import { AppState } from "../AppState.js";
 import { todoService } from "../services/TodoService.js";
 import { getFormData } from "../utils/FormHandler.js";
 import { Pop } from "../utils/Pop.js";
-import { setHTML } from "../utils/Writer.js";
+import { setHTML, setText } from "../utils/Writer.js";
 
 
 export class TodoController {
     constructor() {
         AppState.on('todoList', this.drawTodoList)
+        AppState.on('todoList', this.drawTodoCount)
         AppState.on('account', this.drawTodoList)
         AppState.on('account', this.getTodo)
 
@@ -49,7 +50,6 @@ export class TodoController {
     async destroyTodo(todoId) {
         try {
             const wantsToDelete = await Pop.confirm("Have you finished this Todo???")
-            console.log('wants to delete', wantsToDelete);
             if (!wantsToDelete) return
             await todoService.destroyTodo(todoId)
         } catch (error) {
@@ -57,4 +57,23 @@ export class TodoController {
             Pop.error(error)
         }
     }
+
+    async toggleTodosCompleted(todoId) {
+        try {
+            console.log('📋');
+            await todoService.toggleCompletedTodos(todoId)
+        } catch (error) {
+            Pop.error(error)
+            console.error('COULD NOT UPDATE TODO', error);
+        }
+    }
+
+
+    drawTodoCount() {
+        const todos = AppState.todoList
+        const completedTodos = todos.filter((todo) => todo.completed)
+        setText('todoCount', `${completedTodos.length} / ${todos.length}`)
+
+    }
 }
+

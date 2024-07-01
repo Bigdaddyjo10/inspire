@@ -11,12 +11,18 @@ export class Todo {
         return `
 <div>
     <label for="description">${this.description}</label>
-    <input class="form-check-input" type="checkbox" id="flexCheckDefault" />
+    <input onchange="app.TodoController.toggleTodosCompleted('${this.id}')" type="checkbox" class="checky" ${this.completed ? 'checked' : ''}>
+
     <button onclick="app.TodoController.destroyTodo('${this.id}')" type="button" class="btn btn-outline-danger mdi mdi-trash-can-outline"></button>
 </div>
 `
     }
 }
+
+
+
+
+
 
 // "completed": {
 //     "type": "Boolean",
