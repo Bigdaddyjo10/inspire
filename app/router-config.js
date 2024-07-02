@@ -9,7 +9,7 @@ import { Router } from "./utils/Router.js";
 export const router = new Router([
   {
     path: '',
-    controllers: [HomeController, TodoController, ImageController],
+    controllers: [HomeController, ImageController, TodoController],
     view: 'app/views/HomeView.html'
   },
   {

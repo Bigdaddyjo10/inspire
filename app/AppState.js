@@ -17,7 +17,7 @@ class ObservableAppState extends EventEmitter {
   /**
    * @type {RamImage}
    */
-  ramImage = []
+  ramImage = null
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

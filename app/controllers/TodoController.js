@@ -13,7 +13,6 @@ export class TodoController {
         AppState.on('account', this.getTodo)
     }
 
-
     async getTodo() {
         try {
             await todoService.getTodos()
@@ -42,7 +41,7 @@ export class TodoController {
         let innerHTMLString = ''
         todos.forEach((todo) => innerHTMLString += todo.todoHTMLTemplate)
         setHTML('todo-List', innerHTMLString)
-        console.log('📝 ✍️ ');
+
     }
 
 

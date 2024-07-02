@@ -1,5 +1,12 @@
 export class RamImage {
-    constructor() {
+    constructor(data) {
+        this.url = data.largeImgUrl
+    }
 
+
+    get RamImgTemplate() {
+        return `
+
+        `
     }
 }
