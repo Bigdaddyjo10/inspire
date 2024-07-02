@@ -11,7 +11,6 @@ export class TodoController {
         AppState.on('todoList', this.drawTodoCount)
         AppState.on('account', this.drawTodoList)
         AppState.on('account', this.getTodo)
-
     }
 
 

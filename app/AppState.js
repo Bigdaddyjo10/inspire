@@ -1,3 +1,4 @@
+import { RamImage } from './models/RamImage.js'
 import { Todo } from './models/Todo.js'
 import { EventEmitter } from './utils/EventEmitter.js'
 import { createObservableProxy } from './utils/ObservableProxy.js'
@@ -12,6 +13,11 @@ class ObservableAppState extends EventEmitter {
    * @type {Todo[]}
    */
   todoList = []
+
+  /**
+   * @type {RamImage}
+   */
+  ramImage = []
 }
 
 export const AppState = createObservableProxy(new ObservableAppState())

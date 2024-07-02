@@ -9,11 +9,11 @@ export class Todo {
 
     get todoHTMLTemplate() {
         return `
-<div>
-    <label for="description">${this.description}</label>
-    <input onchange="app.TodoController.toggleTodosCompleted('${this.id}')" type="checkbox" class="checky" ${this.completed ? 'checked' : ''}>
+<div class="py-2" >
+    <input onchange="app.TodoController.toggleTodosCompleted('${this.id}')" type="checkbox" class="checked-box" ${this.completed ? 'checked' : ''}>
+    <label class="text-light" for="description">${this.description}</label>
+    <button onclick="app.TodoController.destroyTodo('${this.id}')" type="button" class="btn btn-danger mdi mdi-trash-can-outline"></button>
 
-    <button onclick="app.TodoController.destroyTodo('${this.id}')" type="button" class="btn btn-outline-danger mdi mdi-trash-can-outline"></button>
 </div>
 `
     }
