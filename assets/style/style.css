@@ -20,3 +20,6 @@ body {
   width: 2em;
   height: 2em;
 }
+.tbg {
+  background-color: rgba(78, 77, 77, 0.226);
+}
