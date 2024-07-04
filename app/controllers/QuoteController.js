@@ -7,7 +7,6 @@ export class QuoteController {
     constructor() {
         this.getQuote()
         AppState.on('user', this.drawQuote)
-        this.drawQuote()
     }
 
     async getQuote() {
@@ -23,7 +22,6 @@ export class QuoteController {
         const quote = AppState.quote
         let quoteHTML = `${quote.QuoteTemplate}`
         setHTML('quotes', quoteHTML)
-        console.log('📗');
     }
 }
 

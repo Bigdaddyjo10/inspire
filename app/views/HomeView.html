@@ -1,22 +1,32 @@
-<section class="py-5 d-flex justify-content-end">
-  <div>
-    <form class="row" onsubmit="app.TodoController.createTodo()">
-      <div class="justify-content-center">
-        <div class="d-flex justify-content-around">
-          <label class="text-light" for="">Add todo</label>
-          <p class="text-light">Todos done <span id="todoCount">0 / 0</span></p>
+<container class="py-5 d-flex justify-content-end">
+  <div class="row">
+    <div class="col-md-8">
+      <div id="quotes"></div>
+    </div>
+    <div class="col-md-3">
+      <form onsubmit="app.TodoController.createTodo()">
+        <div class="justify-content-center">
+          <div class="d-flex justify-content-around">
+            <label class="text-light" for="">Add todo</label>
+            <p class="text-light">Todos done <span id="todoCount">0 / 0</span></p>
+          </div>
+          <div class="input-group p-2">
+            <input type="text" name="description" class="form-control" id="inputPassword2" />
+            <button type="submit" class="btn btn-primary mdi mdi-plus"></button>
+          </div>
         </div>
-        <div class="input-group p-2">
-          <input type="text" name="description" class="form-control" id="inputPassword2" />
-          <button type="submit" class="btn btn-primary mdi mdi-plus"></button>
-        </div>
+      </form>
+      <div>
+        <ul class="p-0" id="todo-List"></ul>
       </div>
-    </form>
-    <div>
-      <ul class="p-0" id="todo-List"></ul>
     </div>
   </div>
-</section>
-<section>
-  <p id="quotes"></p>
-</section>
+</container>
+<container class="row">
+  <div class="col-12">
+    <div class="d-flex justify-content-between p-3 text-light display-6 bg-transparent">
+      <div id="weather"></div>
+      <p class="time">3:30</p>
+    </div>
+  </div>
+</container>
