@@ -5,10 +5,10 @@ import { api } from "./AxiosService.js"
 class ImageService {
 
     async getImage() {
-        const response = await api.get('api/images?largeImgUrl')
+        const response = await api.get('api/images')
         const newImg = new RamImage(response.data)
         AppState.ramImage = newImg
-        console.log('🌆', response.data);
+
     }
 
 }

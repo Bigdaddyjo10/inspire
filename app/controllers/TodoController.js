@@ -71,7 +71,6 @@ export class TodoController {
         const todos = AppState.todoList
         const completedTodos = todos.filter((todo) => todo.completed)
         setText('todoCount', `${completedTodos.length} / ${todos.length}`)
-
     }
 }
 
