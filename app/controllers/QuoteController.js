@@ -19,6 +19,7 @@ export class QuoteController {
     }
 
     drawQuote() {
+        console.log('🎨📝');
         const quote = AppState.quote
         let quoteHTML = `${quote.QuoteTemplate}`
         setHTML('quotes', quoteHTML)

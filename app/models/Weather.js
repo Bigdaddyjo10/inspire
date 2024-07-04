@@ -1,17 +1,13 @@
 export class Weather {
     constructor(data) {
-        this.weather = data.timezone
+        this.temp = data.temp
     }
 
 
     get WeatherTemplate() {
         return `
-        <p>${this.weather}</p>
+        <p>${this.temp}</p>
         `
 
     }
 }
-
-// name: String,
-//     main: undefined,
-//         weather: undefined, 
