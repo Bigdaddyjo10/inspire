@@ -21,12 +21,7 @@ export class WeatherController {
     drawWeather() {
         let weather = AppState.weather
         let weatherHTML = `${weather.WeatherTemplate}`
-
         console.log(weather, '🌨️ 🎨');
-
-
-        // (300K − 273.15) × 9 / 5 + 32 = 80.33°F
-
         setHTML('weather', weatherHTML)
     }
 
